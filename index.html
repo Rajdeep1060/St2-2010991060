@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<style>
+    h1{
+  margin-top: 1%;
+  margin-left: 30%;
+  font-size: 35px;
+  margin-bottom: 1%;
+  color:rgb(100, 41, 195);
+}
+form{
+ margin-left:15%;
+ margin-right:12%;
+ font-size: 13px;
+  border-radius: 5px;
+  background-color:rgb(100, 41, 195);
+  color:white;
+  padding-top:1%;
+  padding-left:1%;
+}
+.form-control{
+  display:inline;
+  width:20%;
+  margin-left:4%;
+  height:22px;
+}
+#lname{
+  display:inline;
+  width:20%;
+  margin-left:4.2%;
+  height:22px;
+}
+#email{
+  display:inline;
+  width:20%;
+  margin-left:5.3%;
+  height:22px;
+}
+#mobile{
+  margin-left:2%;
+}
+#address{
+  margin-top:-3%;
+  margin-left:12.6%;
+}
+textarea{
+  resize:none;
+}
+.checkbox{
+  margin-top:0.7%;
+}
+.col-9{
+  margin-left:16%;
+}
+.t{
+  width:170px;
+  margin-right:14px;
+  height:20px;
+}
+.tm{
+  width:90%;
+  margin-right:2%;
+  margin-left:1%;
+  height:20px;
+}
+.radio{
+  margin-left:1%;
+  margin-top:-0.4;
+}
+.btn{
+  width:30px;
+  height:15px;
+}
+</style>
+</head>
+<body>
+    <h1><u>STUDENT REGISTRATION FORM</u></h1>
+    <form id="form">
+        <label for="fname">FIRST NAME</label>&nbsp;&nbsp;
+         <input type="text" name="fname" id="fname"  class="form-control" maxlength="30" ><span> (max 30 characters a-z and A-Z)</span><br> <br>
+        <label for="lname">LAST NAME</label>&nbsp;&nbsp;
+       <input type="text" name="lname" id="lname" class="form-control"  maxlength="30"><span> (max 30 characters a-z and A-Z)</span><br><br>
+        <label for="date">DATE OF BIRTH</label>&emsp;
+        &ensp;&emsp;&emsp;<select  id="day">
+            <option value="Day">Day</option>
+            <script>
+           for(i=1;i<31;i++){
+            document.write("<option value='+i+'>"+i+"</option>");
+        }
+          </script>
+            </select>
+            <select id="month">
+               <option value="Month">Month</option> 
+               <script>
+                for(j=1;j<=12;j++){
+                 document.write("<option value='+j+'>"+j+"</option>");
+             }
+               </script>
+            </select>
+            <select id="year">
+              <option value="Year" >Year</option>
+              <script>
+                for(k=2022;k>1995;k--){
+                 document.write("<option value='+k+'>"+k+"</option>");
+             }
+               </script>
+            </select>
+            <br><br>
+            <label for="Email">EMAIL ID</label>&ensp;
+            &nbsp;&nbsp;<input type="email" id="email" class="form-control"><br><br>
+            <label for="Mobile">MOBILE NUMBER</label>
+            <input type="number" id="mobile" class="form-control" maxlength="10"><span> (10 digit number)</span><br><br>
+            <label for="gender">GENDER</label>&emsp;&emsp;&emsp;
+            &emsp;&nbsp;&emsp;Male&nbsp;<input type="radio"  id="m" name="gender" value="male">
+            &emsp;Female&nbsp;<input type="radio" name="gender" id="f" value="female"><br><br>
+            <label for="address">ADDRESS</label>
+            <br>
+            <textarea name="address" id="address" cols="35" rows="3"></textarea>
+            <br><br>
+            <label for="city">CITY</label>
+            &emsp;&emsp;&emsp;&emsp;&nbsp;<input type="text" class="form-control" id="city"> (max 30 characters a-z and A-Z)<br><br>
+            <label for="pincode">PIN CODE</label>
+            &emsp;&emsp;<input type="text" maxlength="6" class="form-control" id="pin"> ( 6 digit number)
+            <br><br>
+            <label for="state">STATE</label>
+            &emsp;&emsp;&emsp;&emsp;<input type="text" class="form-control" id="state"> (max 30 characters a-z and A-Z)<br><br>
+            <label for="country">COUNTRY</label>
+            &emsp;&emsp;&nbsp;<input type="text" class="form-control" id="country" value="India" disabled>
+            <br><br>
+            <label for="hobbies">HOBBIES</label>
+           &nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;Drawing&nbsp;&nbsp;<input type="checkbox" value="drawing" id="draw" class="checkbox">
+           &emsp;Singing&nbsp;&nbsp;<input type="checkbox" value="Singing" id="sing" class="checkbox">
+           &emsp;Dancing&nbsp;&nbsp;<input type="checkbox" value="Dancing" id="dance" class="checkbox"> 
+           &emsp;Sketching&nbsp;&nbsp;<input type="checkbox" value="Sketching" id="sketch" class="checkbox"><br>
+           &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Others&nbsp;&nbsp;<input type="checkbox" value="others" id="others" class="checkbox">
+           <input type="text" id="othersfield" class="form-control" style="margin-left:1%;"><br>
+           <br>
+           <div class="row">
+            <div class="col-3">QUALIFICATION</div>
+            <div class="col-9">
+                <fieldset style="border: 2px solid blue;margin-top: -1%;margin-left: -1%;">
+                    <div class="row">
+                        <div class="col-1">SI. No.</div>
+                        <div class="col-2">Examination</div>
+                        <div class="col-3">Board</div>
+                        <div class="col-3">Percentage</div>
+                        <div class="col-3">Year of Passing</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1">1</div>
+                        <div class="col-2">Class X</div>
+                        <div class="col-3"><input type="text" class="t" name="xboard" id="xboard" required></div>
+                        <div class="col-3"><input type="number" class="t" name="xper" id="xper" required></div>
+                        <div class="col-3"><input type="number" class="tm" name="xyop" id="xyop" required></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1">2</div>
+                        <div class="col-2">Class XII</div>
+                        <div class="col-3"><input type="text"class="t" name="xiiboard" id="xiiboard" required></div>
+                        <div class="col-3"><input type="number" class="t"name="xiiper" id="xiiper"required></div>
+                        <div class="col-3"><input type="number" class="tm" name="xiiyop" id="xiiyop"required></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1">3</div>
+                        <div class="col-2">Graduation</div>
+                        <div class="col-3"><input type="text" class="t" name="grad" id="grad"required></div>
+                        <div class="col-3"><input type="number" class="t" name="g-per" id="gradper"required></div>
+                        <div class="col-3"><input type="number" class="tm" name="g-yop" id="gradyop"required></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1">4</div>
+                        <div class="col-2">Masters</div>
+                        <div class="col-3"><input type="text" name="mboard" class="t" id="master" required></div>
+                        <div class="col-3"><input type="number" name="mper" class="t" id="masterper" required></div>
+                        <div class="col-3"><input type="number" name="myop"class="tm" id="masteryop" required></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-2"></div>
+                        <div class="col-3">(10 char max)</div>
+                        <div class="col-3">(upto 2 decimal)</div>
+                        <div class="col-3"></div>
+                    </div>
+                </fieldset>
+            </div>
+            </div>
+            <br>
+         
+            <label for="course">Course<br>Applied For</label>
+            &emsp;&emsp;&emsp;&emsp;BCA<input type="radio" id="bca" name="course" class="radio" required='required'>
+            &emsp;B.Com<input type="radio" id="bcom" name="course"class="radio">
+            &emsp;B.Sc<input type="radio" id="bsc" name="course"class="radio">
+        B.A<input type="radio" name="course" id="ba" class="radio"><br>
+            <br>
+            <span style="margin-left:42%;"></span>
+            <button type="submit" onclick="check()">Submit</button>
+            <input type="reset">
+    </form>
+    <div class="d">
+    <div id="display">
+    </div>
+    <div id="display1">
+    </div>
+    <div id="display2">
+    </div>
+    <div id="display3">
+    </div>
+    <div id="display4">
+    </div>
+    <div id="display5">
+    </div>
+    <div id="display6">
+    </div>
+    <div id="display7">
+    </div>
+    <div id="display8">
+    </div>
+    <div id="display9">
+    </div>
+    <div id="display10">
+    </div>
+    <div id="display11">
+    </div>
+    <div id="display12">
+    </div>
+    <div id="display13">
+    </div>
+    <div id="display14">
+    </div>
+    <div id="display15">
+    </div>
+    <div id="display16">
+    </div>
+    <div id="display17">
+    </div>
+    <div id="display18">
+    </div>
+    <div id="display19">
+    </div>
+    <div id="display20">
+    </div>
+    <div id="display21">
+    </div>
+    </div>
+
+    <script>
+        function check(){
+	var fname=document.getElementById("fname").value;
+var lname=document.getElementById("lname").value;
+var day=document.getElementById("day").value;
+var month=document.getElementById("month").value;
+var year=document.getElementById("year").value;
+var email=document.getElementById("email").value;
+var mobile=document.getElementById("mobile").value;
+var gender;
+if(document.getElementById('m').checked) {
+   gender = document.getElementById('m').value;
+  }
+  else{
+  gender=document.getElementById('f').value;
+  }
+var hobbies;
+if(document.getElementById("draw").checked){
+	hobbies="drawing"+" ";
+}
+if(document.getElementById("sing").checked){
+	hobbies="singing"+" ";
+}
+if(document.getElementById("dance").checked){
+	hobbies="dancing"+" ";
+}
+if(document.getElementById("sketch").checked){
+	hobbies="sketching"+" ";
+}
+if(document.getElementById("others").checked){
+	hobbies=document.getElementById("othersfield")
+}
+var city=document.getElementById("city").value;
+var pin=document.getElementById("pin").value;
+var state=document.getElementById("state").value;
+var country=document.getElementById("country").value;
+var xboard=document.getElementById("xboard").value;
+var xper=document.getElementById("xper").value;
+var xyop=document.getElementById("xyop").value;
+var xiiboard=document.getElementById("xiiboard").value;
+var xiiper=document.getElementById("xiiper").value;
+var xiiyop=document.getElementById("xiiyop").value;
+var grad=document.getElementById("grad").value;
+var gradper=document.getElementById("gradper").value;
+var gradyop=document.getElementById("gradyop").value;
+var master=document.getElementById("master").value;
+var masterper=document.getElementById("masterper").value;
+var masteryop=document.getElementById("masteryop").value;
+var course;
+xper=parseFloat(xper).toFixed(2);
+xiiper=parseFloat(xiiper).toFixed(2);
+gradper=parseFloat(gradper).toFixed(2);
+masterper=parseFloat(masterper).toFixed(2);
+if(document.getElementById('bca').checked) {
+   course ="bca";
+  }
+  else if(document.getElementById('bcom').checked){
+  course="bcom";
+  }
+  else if(document.getElementById('bsc').checked){
+	course="bsc";
+	}
+	else{
+		course="ba";
+	}
+	let n=true;
+	let m=true;
+	let p=true;
+	if(fname.length==0 || lname.length==0){
+		alert("Invalid length of name"); 
+		n=false;
+	}
+	if(mobile.length==0 || mobile.length>10){
+		alert("Invalid length of mobile"); 
+		m=false;
+	}
+	if(pin.length==0 || pin.length>6){
+		alert("Pin invalid");
+		p=false;
+	}
+	
+	var c=prompt("Do you want to cotinue yes or No");
+	if((c=="yes"||c=="YES") && n && m && p ){
+		alert("OK");
+		console.log(fname);
+		console.log(lname);
+		console.log(day);
+		console.log(month);
+		console.log(year);
+		console.log(mobile);
+		console.log(gender);
+		console.log(city);
+		console.log(state);
+		console.log(pin);
+		console.log(country);
+		console.log(xboard);
+		console.log(xper);
+		console.log(xyop);
+		console.log(xiiboard);
+		console.log(xiiper);
+		console.log(xiiyop);
+		console.log(grad);
+		console.log(gradper);
+		console.log(gradyop);
+		console.log(master);
+		console.log(masterper);
+		console.log(masteryop);
+		console.log(course);
+		document.getElementById("form").style.display="none";
+		document.body.style.backgroundColor="Black";
+		document.body.style.color="White";
+		document.getElementById("display").innerHTML="First Name:-"+ fname+"<br>";
+		document.getElementById("display1").innerHTML="Last Name:- " + lname +"<br>";
+		document.getElementById("display2").innerHTML="Date:- 30-9-2002"+"<br>";
+		document.getElementById("display4").innerHTML="mobile :- " +mobile +"\n";
+		document.getElementById("display5").innerHTML="gender:- "+gender +"\n";
+		document.getElementById("display6").innerHTML="city:- "+city +"\n";
+		document.getElementById("display7").innerHTML="state:- "+state +"\n";
+		document.getElementById("display8").innerHTML="pin:- "+pin +"\n";
+		document.getElementById("display9").innerHTML="country:- "+country +"\n";
+		document.getElementById("display9").innerHTML="hobbies:- "+hobbies +"\n";
+		document.getElementById("display10").innerHTML=" X board:- "+xboard +"\n";
+		document.getElementById("display11").innerHTML=" X per:- "+xper +"\n";
+		document.getElementById("display12").innerHTML=" X yr:- "+xyop +"\n";
+		document.getElementById("display13").innerHTML=" XII board:- "+xiiboard +"\n";
+		document.getElementById("display14").innerHTML=" XII per:- "+xiiper +"\n";
+		document.getElementById("display15").innerHTML=" XII yr:- "+xiiyop +"\n";
+		document.getElementById("display16").innerHTML=" grad :- "+grad +"\n";
+		document.getElementById("display17").innerHTML=" grad per :- "+gradper +"\n";
+		document.getElementById("display18").innerHTML=" grad yr :- "+gradyop +"\n";
+		document.getElementById("display19").innerHTML=" master :- "+master +"\n";
+		document.getElementById("display20").innerHTML=" master per :- "+masterper +"\n";
+		document.getElementById("display21").innerHTML=" master yr :- "+masteryop +"\n";
+	}
+
+
+	}
+
+
+    </script>
+</body>
+</html>
